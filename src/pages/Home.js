@@ -15,7 +15,7 @@ const Home = () => {
       <h1 className="mt-5">Recommended Recipes</h1>
       <Card />
       <center>
-        <button className="btn btn-primary m-5">Load MOre</button>
+        <button className="btn btn-primary m-5">Load More</button>
       </center>
       <Footer />
     </>
