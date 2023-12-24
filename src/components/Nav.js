@@ -74,8 +74,8 @@ const Nav = () => {
               </button>
             </form>
             <div>
-              <Link>
-                <i class="bi bi-person-circle p-5"></i>
+              <Link to="/login">
+                <i className="bi bi-person-circle p-5"></i>
               </Link>
             </div>
           </div>

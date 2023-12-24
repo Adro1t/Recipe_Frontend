@@ -7,6 +7,7 @@ import Nav from "../components/Nav";
 const Home = () => {
   return (
     <>
+      <p>{process.env.URL}</p>
       <Nav />
       <Carousel />
       <div className="mt-5">
