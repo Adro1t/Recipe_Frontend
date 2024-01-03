@@ -7,6 +7,8 @@ const Signup = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    error: "",
+    success: false,
   });
 
   const { name, email, password, confirmPassword, error, success } = values;
@@ -18,16 +20,25 @@ const Signup = () => {
   const clickSubmit = (event) => {
     event.preventDefault();
     setValues({ ...values, error: false });
-    // if (password === confirmPassword) {
-    //Signup function
-    signup({ name, email, password }).then((data) => {
-      if (data && data.error) {
-        setValues({ ...values, error: data.error, success: false });
-      } else {
-        setValues({ ...values, name: "", email: "", password: "", confirmPassword: "", success: true });
-      }
-    });
-    // }
+    if (password === confirmPassword) {
+      //Signup function
+      signup({ name, email, password }).then((data) => {
+        if (data && data.error) {
+          setValues({ ...values, error: data.error, success: false });
+        } else {
+          setValues({ ...values, name: "", email: "", password: "", confirmPassword: "", success: true });
+        }
+      });
+    } else {
+      setValues({
+        ...values,
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        error: "Password and confirm password doesn't match",
+      });
+    }
   };
 
   //to show error message
