@@ -16,3 +16,41 @@ export const signup = async (user) => {
     console.log(error);
   }
 };
+
+//for signin
+export const signin = async (user) => {
+  try {
+    const response = await fetch(`${API}/user/signin`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+    return await response.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//to authenticate
+export const authenticate = async (data, next) => {
+  if (typeof window !== "undefined") {
+    try {
+      localStorage.setItem("jwt", JSON.stringify(data));
+      next();
+    } catch (error) {
+      console.error(error);
+      // Handle error
+    }
+  }
+};
+
+//redirect to authenticated by user role
+export const isAuthenticated = () => {
+  if (typeof window === "undefined") {
+    return false;
+  }
+  return localStorage.getItem("jwt") ? JSON.parse(localStorage.getItem("jwt")) : false;
+};

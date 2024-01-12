@@ -4,7 +4,8 @@ import Home from "./pages/Home";
 import RecipeDetails from "./pages/RecipeDetails";
 import Recipes from "./pages/Recipes";
 import Confirm from "./pages/auth/Confirm";
-// import Login from "./pages/auth/Login";
+import Login from "./pages/auth/Login";
+import Signin from "./pages/auth/Signin";
 import Signup from "./pages/auth/Signup";
 
 const App = () => {
@@ -15,7 +16,9 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/details" element={<RecipeDetails />} />
-          <Route path="/login" element={<Signup />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/email/confirmation/:token" element={<Confirm />} />
         </Routes>
       </Router>
