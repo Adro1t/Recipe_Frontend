@@ -1,10 +1,10 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { isAuthenticated, signout } from "../pages/auth";
-import "./Nav.css";
+import recipix from "../images/Recipix.png";
 import search from "../images/Search-icon.png";
 import user from "../images/user-icon.png";
-import recipix from "../images/Recipix.png";
+import { isAuthenticated, signout } from "../pages/auth";
+import "./Nav.css";
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const Nav = () => {
     <>
       <nav className="navbar">
         <div className="logo">
-          {/* <img className="img-logo" src={recipix} alt=""></img> */}
+          <img className="img-logo" src={recipix} alt=""></img>
           <Link className="" to="/">
             RecipiX
           </Link>
