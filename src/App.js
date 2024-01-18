@@ -10,6 +10,8 @@ import Login from "./pages/auth/Login";
 import PrivateRoute from "./pages/auth/PrivateRoute";
 import Signin from "./pages/auth/Signin";
 import Signup from "./pages/auth/Signup";
+import ForgetPassword from "./pages/user/ForgetPassword";
+import ResetPassword from "./pages/user/ResetPassword";
 import UserDashboard from "./pages/user/UserDashboard";
 
 const App = () => {
@@ -23,6 +25,8 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/forgetpassword" element={<ForgetPassword />} />
+          <Route path="/reset/password/:token" element={<ResetPassword />} />
           <Route path="/email/confirmation/:token" element={<Confirm />} />
 
           {/* admin */}

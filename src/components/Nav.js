@@ -81,9 +81,11 @@ const Nav = () => {
                   Signout
                 </button>
               )}
-              <Link to="/login">
-                <i className="bi bi-person-circle p-5"></i>
-              </Link>
+              {!isAuthenticated() && (
+                <Link to="/login">
+                  <i className="bi bi-person-circle p-5"></i>
+                </Link>
+              )}
             </div>
           </div>
         </div>

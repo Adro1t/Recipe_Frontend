@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { authenticate, isAuthenticated, signin } from "./index";
 
@@ -87,8 +87,9 @@ const Signin = () => {
           />
           <br />
           <button className="btn btn-primary" onClick={clickSubmit}>
-            Continue
+            Login
           </button>
+          <Link to="/forgetpassword">Forget Password</Link>
         </form>
       </div>
     </>

@@ -1,38 +1,43 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { isAuthenticated, signout } from "../auth";
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
+  const {
+    user: { name, email },
+  } = isAuthenticated();
   return (
     <>
       <div className="container-fluid">
         <div className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style={{ width: "280px" }}>
-          <Link href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <Link to="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
             <span className="fs-4">Dashboard</span>
           </Link>
           <hr />
           <ul className="nav nav-pills flex-column mb-auto">
             <li className="nav-item">
-              <Link href="#" className="nav-link active" aria-current="page">
+              <Link to="#" className="nav-link active" aria-current="page">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="#" className="nav-link text-white">
+              <Link to="#" className="nav-link text-white">
                 Dashboard
               </Link>
             </li>
             <li>
-              <Link href="#" className="nav-link text-white">
+              <Link to="#" className="nav-link text-white">
                 Orders
               </Link>
             </li>
             <li>
-              <Link href="#" className="nav-link text-white">
+              <Link to="#" className="nav-link text-white">
                 Products
               </Link>
             </li>
             <li>
-              <Link href="#" className="nav-link text-white">
+              <Link to="#" className="nav-link text-white">
                 Customers
               </Link>
             </li>
@@ -40,26 +45,26 @@ const AdminDashboard = () => {
           <hr />
           <div className="dropdown">
             <Link
-              href="#"
+              to="#"
               className="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
               data-bs-toggle="dropdown"
               aria-expanded="false">
               <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2" />
-              <strong>mdo</strong>
+              <strong>{name}</strong>
             </Link>
             <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
               <li>
-                <Link className="dropdown-item" href="#">
-                  New project...
+                <Link className="dropdown-item" to="#">
+                  {email}
                 </Link>
               </li>
               <li>
-                <Link className="dropdown-item" href="#">
+                <Link className="dropdown-item" to="#">
                   Settings
                 </Link>
               </li>
               <li>
-                <Link className="dropdown-item" href="#">
+                <Link className="dropdown-item" to="#">
                   Profile
                 </Link>
               </li>
@@ -67,7 +72,7 @@ const AdminDashboard = () => {
                 <hr className="dropdown-divider" />
               </li>
               <li>
-                <Link className="dropdown-item" href="#">
+                <Link className="dropdown-item" to="/login" onClick={() => signout(() => navigate("/login"))}>
                   Sign out
                 </Link>
               </li>

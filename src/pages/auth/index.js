@@ -71,3 +71,20 @@ export const signout = async (next) => {
       });
   }
 };
+
+//forget password
+export const forgetPassword = async (user) => {
+  try {
+    const response = await fetch(`${API}/user/password/forget`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+    return await response.json();
+  } catch (error) {
+    console.log(error);
+  }
+};

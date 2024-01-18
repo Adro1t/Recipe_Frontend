@@ -1,17 +1,18 @@
-import React, { useState } from "react";
-import { signup } from "./index";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { API } from "../../config";
 
-const Signup = () => {
+const ResetPassword = () => {
   const [values, setValues] = useState({
-    name: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    cpassword: "",
     error: "",
     success: false,
   });
+  const token = useParams();
 
-  const { name, email, password, confirmPassword, error, success } = values;
+  const { email, password, cpassword, error, success } = values;
 
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
@@ -20,25 +21,22 @@ const Signup = () => {
   const clickSubmit = (event) => {
     event.preventDefault();
     setValues({ ...values, error: false });
-    if (password === confirmPassword) {
-      //Signup function
-      signup({ name, email, password }).then((data) => {
-        if (data && data.error) {
+
+    //reset password
+    fetch(`${API}/user/password/reset/${token.token}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(values),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
           setValues({ ...values, error: data.error, success: false });
         } else {
-          setValues({ ...values, name: "", email: "", password: "", confirmPassword: "", success: true });
+          setValues({ ...values, error: "", email: "", password: "", cpassword: "", success: true });
         }
-      });
-    } else {
-      setValues({
-        ...values,
-        name: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-        error: "Password and confirm password doesn't match",
-      });
-    }
+      })
+      .catch((err) => console.log(err));
   };
 
   //to show error message
@@ -51,28 +49,18 @@ const Signup = () => {
   //to show success message
   const showSuccess = () => (
     <div className="alert alert-info" style={{ display: success ? "" : "none" }}>
-      New Account Created, verify your account before login
+      Password has been reset successfully
     </div>
   );
 
   return (
     <>
-      <div className="p-5">
-        <h1>Signup Page</h1>
+      <div className="p-5  w-50">
+        <h1>Forget Password</h1>
         <form>
           {showError()}
           {showSuccess()}
-          <label htmlFor="userName">Username:</label>
-          <br />
-          <input
-            className="form-control"
-            type="text"
-            id="userName"
-            name="userName"
-            onChange={handleChange("name")}
-            value={name}
-          />
-          <br />
+
           <label htmlFor="email">Email:</label>
           <br />
           <input
@@ -84,7 +72,8 @@ const Signup = () => {
             value={email}
           />
           <br />
-          <label htmlFor="password">Password:</label>
+
+          <label htmlFor="email">New Password:</label>
           <br />
           <input
             className="form-control"
@@ -95,24 +84,27 @@ const Signup = () => {
             value={password}
           />
           <br />
-          <label htmlFor="confirmPassword">Confirm Password:</label>
+
+          <label htmlFor="email">Confirm New Password:</label>
           <br />
           <input
             className="form-control"
             type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            onChange={handleChange("confirmPassword")}
-            value={confirmPassword}
+            id="cpassword"
+            name="cpassword"
+            onChange={handleChange("cpassword")}
+            value={cpassword}
           />
           <br />
+
           <button className="btn btn-primary" onClick={clickSubmit}>
-            Register
+            Reset Password
           </button>
+          <Link to="/login">Go to Login</Link>
         </form>
       </div>
     </>
   );
 };
 
-export default Signup;
+export default ResetPassword;
