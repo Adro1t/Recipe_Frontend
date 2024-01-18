@@ -3,13 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated, signout } from "../pages/auth";
 import "./Nav.css";
 
+import search from "../images/Search-icon.png";
+import user from "../images/user-icon.png";
+
 const Nav = () => {
   const navigate = useNavigate();
   return (
     <>
       <nav className="navbar">
         <div className="logo">
-          <Link className="" to="#">
+          <Link className="" to="/">
             RecipiX
           </Link>
         </div>
@@ -17,24 +20,9 @@ const Nav = () => {
           <form class="example" action="action_page.php">
             <input type="text" placeholder="Search.." name="search" />
             <button type="submit">
-            <img className="Search-icon" src="./Search-icon.png" alt=""></img>
+              <img className="Search-icon" src={search} alt=""></img>
             </button>
           </form>
-          <div>
-            {isAuthenticated() && (
-              <button
-                className="btn btn-warning"
-                onClick={() => signout(() => navigate("/login"))}
-              >
-                Signout
-              </button>
-            )}
-            {!isAuthenticated() && (
-              <Link to="/login">
-                <i className=""></i>
-              </Link>
-            )}
-          </div>
         </div>
         <div className="nav-pages">
           <ul className="nav-links">
@@ -55,8 +43,18 @@ const Nav = () => {
             </li>
           </ul>
         </div>
+
         <div className="User">
-          <img src="./user-icon.png" alt="image"></img>
+          {!isAuthenticated() && (
+            <Link to="/login">
+              <img src={user} alt="login" />
+            </Link>
+          )}
+          {isAuthenticated() && (
+            <button className="btn btn-warning" onClick={() => signout(() => navigate("/login"))}>
+              Signout
+            </button>
+          )}
         </div>
       </nav>
     </>
