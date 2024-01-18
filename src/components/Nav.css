@@ -46,7 +46,7 @@ header{
 }
 
 
-/* Style the search field */
+
 form.example input[type=text] {
     padding: 10px;
     font-size: 17px;
@@ -56,7 +56,7 @@ form.example input[type=text] {
     background: #f1f1f1;
   }
   
-  /* Style the submit button */
+
   form.example button {
     float: left;
     width: 20%;
@@ -74,7 +74,7 @@ form.example input[type=text] {
     background: #da800b;
   }
   
-  /* Clear floats */
+
   form.example::after {
     content: "";
     clear: both;
