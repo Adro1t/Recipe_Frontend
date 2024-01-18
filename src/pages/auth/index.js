@@ -54,3 +54,20 @@ export const isAuthenticated = () => {
   }
   return localStorage.getItem("jwt") ? JSON.parse(localStorage.getItem("jwt")) : false;
 };
+
+//signout
+export const signout = async (next) => {
+  if (typeof window !== "undefined") {
+    localStorage.removeItem("jwt", JSON.stringify("jwt"));
+    next();
+    return fetch(`${API}/user/signout`, {
+      method: "POST",
+    })
+      .then((res) => {
+        console.log("signed out", res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+};

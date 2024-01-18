@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { isAuthenticated, signout } from "../pages/auth";
 
 const Nav = () => {
+  const navigate = useNavigate();
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -74,6 +76,11 @@ const Nav = () => {
               </button>
             </form>
             <div>
+              {isAuthenticated() && (
+                <button className="btn btn-warning" onClick={() => signout(() => navigate("/login"))}>
+                  Signout
+                </button>
+              )}
               <Link to="/login">
                 <i className="bi bi-person-circle p-5"></i>
               </Link>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Nav from "../../components/Nav";
 import { API } from "../../config";
 
 const Confirm = () => {
@@ -45,9 +46,9 @@ const Confirm = () => {
 
   return (
     <>
+      <Nav />
       {showError()}
       {showSuccess()}
-      <div>Confirm</div>
     </>
   );
 };
