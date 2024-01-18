@@ -1,5 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import recipix from "../images/Recipix.png";
+import search from "../images/Search-icon.png";
+import user from "../images/user-icon.png";
 import { isAuthenticated, signout } from "../pages/auth";
 import "./Nav.css";
 
@@ -9,32 +12,18 @@ const Nav = () => {
     <>
       <nav className="navbar">
         <div className="logo">
-          <Link className="" to="#">
+          <img className="img-logo" src={recipix} alt=""></img>
+          <Link className="" to="/">
             RecipiX
           </Link>
         </div>
         <div className="search-bar">
-          <form class="example" action="action_page.php">
+          <form className="example" action="action_page.php">
             <input type="text" placeholder="Search.." name="search" />
             <button type="submit">
-            <img className="Search-icon" src="./Search-icon.png" alt=""></img>
+              <img className="Search-icon" src={search} alt=""></img>
             </button>
           </form>
-          <div>
-            {isAuthenticated() && (
-              <button
-                className="btn btn-warning"
-                onClick={() => signout(() => navigate("/login"))}
-              >
-                Signout
-              </button>
-            )}
-            {!isAuthenticated() && (
-              <Link to="/login">
-                <i className=""></i>
-              </Link>
-            )}
-          </div>
         </div>
         <div className="nav-pages">
           <ul className="nav-links">
@@ -55,8 +44,18 @@ const Nav = () => {
             </li>
           </ul>
         </div>
+
         <div className="User">
-          <img src="./user-icon.png" alt="image"></img>
+          {!isAuthenticated() && (
+            <Link to="/login">
+              <img src={user} alt="login" />
+            </Link>
+          )}
+          {isAuthenticated() && (
+            <button className="btn btn-warning" onClick={() => signout(() => navigate("/login"))}>
+              Signout
+            </button>
+          )}
         </div>
       </nav>
     </>
