@@ -2,7 +2,6 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated, signout } from "../pages/auth";
 import "./Nav.css";
-
 import search from "../images/Search-icon.png";
 import user from "../images/user-icon.png";
 
