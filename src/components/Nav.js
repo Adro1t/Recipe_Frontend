@@ -4,6 +4,7 @@ import { isAuthenticated, signout } from "../pages/auth";
 import "./Nav.css";
 import search from "../images/Search-icon.png";
 import user from "../images/user-icon.png";
+import recipix from "../images/Recipix.png";
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -11,12 +12,13 @@ const Nav = () => {
     <>
       <nav className="navbar">
         <div className="logo">
+          {/* <img className="img-logo" src={recipix} alt=""></img> */}
           <Link className="" to="/">
             RecipiX
           </Link>
         </div>
         <div className="search-bar">
-          <form class="example" action="action_page.php">
+          <form className="example" action="action_page.php">
             <input type="text" placeholder="Search.." name="search" />
             <button type="submit">
               <img className="Search-icon" src={search} alt=""></img>
