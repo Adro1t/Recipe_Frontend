@@ -12,7 +12,7 @@ const Nav = () => {
     <>
       <nav className="navbar">
         <div className="logo">
-          {/* <img className="img-logo" src={recipix} alt=""></img> */}
+          <img className="img-logo" src={recipix} alt=""></img>
           <Link className="" to="/">
             RecipiX
           </Link>
