@@ -83,6 +83,9 @@ form.example::after {
 }
 
 .User img {
-  height: 2rem;
   width: 1.5rem;
+}
+
+.img-logo {
+  width: 2rem;
 }
