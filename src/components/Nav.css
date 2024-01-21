@@ -25,6 +25,7 @@ header {
   padding: 0 2rem;
 }
 
+
 .navbar {
   width: 100%;
   height: 60px;
@@ -33,6 +34,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
 }
 
 .navbar .logo a {
@@ -82,10 +84,21 @@ form.example::after {
   width: 1.5rem;
 }
 
+
 .User img {
   width: 1.5rem;
 }
 
-.img-logo {
-  width: 2rem;
+
+.Search-icon{
+    height: 1.5rem;
+    width: 1.5rem;
+}  
+
+.User img{
+    width: 1.5rem;
 }
+
+/* .img-logo {
+    width: 1.5rem;
+} */
