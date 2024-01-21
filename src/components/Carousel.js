@@ -3,7 +3,7 @@ import React from "react";
 const Carousel = () => {
   return (
     <>
-      <div id="carouselExample" className="carousel slide mt-3">
+      <div id="carouselExample" className="carousel slide mt-4">
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img src="..." className="d-block w-100" alt="1" style={{ backgroundColor: "black", height: "500px" }} />
