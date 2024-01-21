@@ -25,25 +25,14 @@ header {
   padding: 0 2rem;
 }
 
-<<<<<<< HEAD
 .navbar {
   width: 100%;
   height: 60px;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-=======
-.navbar{
-    width: 100%;
-    height: 60px;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
->>>>>>> 2ceadb13ed4699d3932a2a74ca8ec18164f42d04
 }
 
 .navbar .logo a {
@@ -51,10 +40,22 @@ header {
   font-weight: bold;
 }
 
-<<<<<<< HEAD
 .nav-pages .nav-links {
+  padding: 0;
+  height: 100%;
   display: flex;
-  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-pages {
+  width: 250px;
+  height: 100%;
+}
+
+.search-bar {
+  padding: 0;
+  width: 600px;
 }
 
 form.example input[type="text"] {
@@ -66,57 +67,10 @@ form.example input[type="text"] {
   background: #f1f1f1;
 }
 
-form.example button {
-  float: left;
-  width: 20%;
-  height: 100%;
-  padding: 10px;
-  background: #f3c921;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none; /* Prevent double borders */
-  cursor: pointer;
+.example {
+  margin: auto;
+  max-width: 300px;
 }
-
-form.example button:hover {
-  background: #da800b;
-}
-=======
-.nav-pages .nav-links{
-    padding: 0;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-pages{
-    width: 250px;
-    height: 100%;
-}
-
-.search-bar{
-    padding: 0;
-    width: 600px;
-
-}
-
-form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-  }
-
-  .example{
-    margin: auto;
-    max-width: 300px;
-  }
-  
->>>>>>> 2ceadb13ed4699d3932a2a74ca8ec18164f42d04
 
 form.example::after {
   content: "";
@@ -129,22 +83,15 @@ form.example::after {
   width: 1.5rem;
 }
 
-<<<<<<< HEAD
-.User img {
+.Search-icon {
+  height: 1.5rem;
   width: 1.5rem;
 }
-=======
 
-.Search-icon{
-    height: 1.5rem;
-    width: 1.5rem;
-}  
-
-.User img{
-    width: 1.5rem;
+.User img {
+  width: 1.5rem;
 }
 
 /* .img-logo {
     width: 1.5rem;
 } */
->>>>>>> 2ceadb13ed4699d3932a2a74ca8ec18164f42d04
