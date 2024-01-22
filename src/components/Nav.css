@@ -19,22 +19,15 @@ a:hover {
   color: #feb717;
 }
 
-/*HEADER*/
-header {
-  position: relative;
-  padding: 0 2rem;
-}
-
-
 .navbar {
   width: 100%;
   height: 60px;
-  max-width: 1200px;
+  max-width: 94%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  padding: 0 20px;
 }
 
 .navbar .logo a {
@@ -43,9 +36,14 @@ header {
 }
 
 .nav-pages .nav-links {
+  width: 280px;
+  padding: 0;
+  margin: 0;
   display: flex;
-  gap: 2rem;
+  justify-content: space-around;
+  align-items: center;
 }
+
 
 form.example input[type="text"] {
   padding: 10px;
@@ -84,21 +82,26 @@ form.example::after {
   width: 1.5rem;
 }
 
+.search-bar{
+  width: 400px;
+}
+
 
 .User img {
   width: 1.5rem;
 }
 
 
-.Search-icon{
-    height: 1.5rem;
-    width: 1.5rem;
-}  
-
-.User img{
-    width: 1.5rem;
+.img-logo {
+    width: 2.5rem;
+    margin-top: -7px;
 }
 
-/* .img-logo {
-    width: 1.5rem;
-} */
+.logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo:nth-child(1){
+  align-items: flex-start;
+}
