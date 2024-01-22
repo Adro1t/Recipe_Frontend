@@ -19,6 +19,12 @@ a:hover {
   color: #feb717;
 }
 
+/*HEADER*/
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+
 .navbar {
   width: 100%;
   height: 60px;
