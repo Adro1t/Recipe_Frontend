@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { forgetPassword } from "../auth";
+import { forgetPassword } from "../pages/auth";
 
 const ForgetPassword = () => {
   const [values, setValues] = useState({

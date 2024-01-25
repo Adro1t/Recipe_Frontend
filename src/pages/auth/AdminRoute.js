@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import AdminDashboard from "../admin/AdminDashboard";
+import AdminDashboard from "../../admin/AdminDashboard";
 import { isAuthenticated } from "./index";
 
 const AdminRoute = () =>

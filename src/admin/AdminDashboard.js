@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { isAuthenticated, signout } from "../auth";
+import { isAuthenticated, signout } from "../pages/auth";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
