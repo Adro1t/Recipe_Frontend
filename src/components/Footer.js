@@ -1,7 +1,7 @@
 import React from "react";
-import "./Footer.css";
 import { Link } from "react-router-dom";
 import recipix from "../images/Recipix.png";
+import "./Footer.css";
 // import search from "../images/Search-icon.png";
 
 const Footer = () => (
@@ -16,22 +16,22 @@ const Footer = () => (
         </div>
         <ul>
           <li>
-            <a href="/about">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="/blog">Blog</a>
+            <Link to="/blog">Blog</Link>
           </li>
           <li>
-            <a href="/recipes">Recipe Index</a>
+            <Link to="/recipes">Recipe Index</Link>
           </li>
           <li>
-            <a href="/sponsored-content">Sponsored Content</a>
+            <Link to="/sponsored-content">Sponsored Content</Link>
           </li>
           <li>
-            <a href="/media-mentions">Media Mentions</a>
+            <Link to="/media-mentions">Media Mentions</Link>
           </li>
           <li>
-            <a href="/contact">Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </div>
@@ -39,25 +39,25 @@ const Footer = () => (
         <h3>FOOD & RECIPES</h3>
         <ul>
           <li>
-            <a href="/sugar-free-january">Sugar Free</a>
+            <Link to="/sugar-free-january">Sugar Free</Link>
           </li>
           <li>
-            <a href="/quick-and-easy-recipes">Quick and Easy Recipes</a>
+            <Link to="/quick-and-easy-recipes">Quick and Easy Recipes</Link>
           </li>
           <li>
-            <a href="/instant-pot-recipes">Instant Pot Recipes</a>
+            <Link to="/instant-pot-recipes">Instant Pot Recipes</Link>
           </li>
           <li>
-            <a href="/pasta-recipes">Pasta Recipes</a>
+            <Link to="/pasta-recipes">Pasta Recipes</Link>
           </li>
           <li>
-            <a href="/vegan-recipes">Vegan Recipes</a>
+            <Link to="/vegan-recipes">Vegan Recipes</Link>
           </li>
           <li>
-            <a href="/soup-recipes">Soup Recipes</a>
+            <Link to="/soup-recipes">Soup Recipes</Link>
           </li>
           <li>
-            <a href="/meal-prep-recipes">Meal Prep Recipes</a>
+            <Link to="/meal-prep-recipes">Meal Prep Recipes</Link>
           </li>
         </ul>
       </div>
@@ -73,8 +73,8 @@ const Footer = () => (
     </div>
     <div className="footer-bottom">
       <p>&copy; 2024 RecipiX. All Rights Reserved.</p>
-      <a href="/privacy-policy">Privacy Policy</a>
-      <a href="/terms">Terms</a>
+      <Link to="/privacy-policy">Privacy Policy</Link>
+      <Link to="/terms">Terms</Link>
     </div>
   </footer>
 );

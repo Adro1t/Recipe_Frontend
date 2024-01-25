@@ -1,5 +1,7 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import AddCategory from "./admin/AddCategory";
+import AddProduct from "./admin/AddProduct";
 import AdminDashboard from "./admin/AdminDashboard";
 import Home from "./pages/Home";
 import RecipeDetails from "./pages/RecipeDetails";
@@ -32,6 +34,8 @@ const App = () => {
           {/* admin */}
           <Route path="/admin/" element={<AdminRoute />}>
             <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="addcategory" element={<AddCategory />} />
+            <Route path="addproduct" element={<AddProduct />} />
           </Route>
 
           {/* private */}
