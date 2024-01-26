@@ -41,6 +41,7 @@ const App = () => {
           {/* private */}
           <Route path="/user/" element={<PrivateRoute />}>
             <Route path="dashboard" element={<UserDashboard />} />
+            <Route path="addproduct" element={<AddProduct />} />
           </Route>
         </Routes>
       </Router>

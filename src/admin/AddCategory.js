@@ -68,6 +68,7 @@ const AddCategory = () => {
                   id="category"
                   onChange={handleChange}
                   value={category_Name}
+                  required
                 />
               </div>
               <div className="mb-3 text-center">
