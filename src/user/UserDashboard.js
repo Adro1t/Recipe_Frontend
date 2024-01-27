@@ -1,13 +1,10 @@
 import React from "react";
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
+import UserSidebar from "./UserSidebar";
 
 const UserDashboard = () => {
   return (
     <>
-      <Nav />
-      <div>UserDashboard</div>
-      <Footer />
+      <UserSidebar />
     </>
   );
 };

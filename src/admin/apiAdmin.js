@@ -48,6 +48,25 @@ export const createRecipe = async (token, recipe) => {
 };
 
 //to show recipes
-export const showRecipes = () => {
-  fetch(`${API}/recipe/list`);
+export const showRecipes = async () => {
+  try {
+    const res = await fetch(`${API}/recipe/list?limit=undefined`, {
+      method: "GET",
+    });
+    return await res.json();
+  } catch (err) {
+    return console.log(err);
+  }
+};
+
+//to get users information
+export const getUsers = async () => {
+  try {
+    const res = await fetch(`${API}/user/list`, {
+      method: "GET",
+    });
+    return await res.json();
+  } catch (err) {
+    return console.log(err);
+  }
 };

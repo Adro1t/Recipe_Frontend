@@ -1,8 +1,9 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import AddCategory from "./admin/AddCategory";
-import AddProduct from "./admin/AddProduct";
+import AddRecipe from "./admin/AddRecipe";
 import AdminDashboard from "./admin/AdminDashboard";
+import AllRecipe from "./admin/AllRecipe";
 import Home from "./pages/Home";
 import RecipeDetails from "./pages/RecipeDetails";
 import Recipes from "./pages/Recipes";
@@ -35,13 +36,14 @@ const App = () => {
           <Route path="/admin/" element={<AdminRoute />}>
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="addcategory" element={<AddCategory />} />
-            <Route path="addproduct" element={<AddProduct />} />
+            <Route path="addrecipe" element={<AddRecipe />} />
+            <Route path="recipes" element={<AllRecipe />} />
           </Route>
 
           {/* private */}
           <Route path="/user/" element={<PrivateRoute />}>
             <Route path="dashboard" element={<UserDashboard />} />
-            <Route path="addproduct" element={<AddProduct />} />
+            <Route path="addrecipe" element={<AddRecipe />} />
           </Route>
         </Routes>
       </Router>

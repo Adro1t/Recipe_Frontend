@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { isAuthenticated } from "../pages/auth";
+import UserSidebar from "../user/UserSidebar";
 import AdminSidebar from "./AdminSidebar";
 import { createRecipe, getCategories } from "./apiAdmin";
 
-const AddProduct = () => {
+const AddRecipe = () => {
   const { user, token } = isAuthenticated();
   const [values, setValues] = useState({
     recipe_name: "",
@@ -100,9 +101,7 @@ const AddProduct = () => {
     <>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-3">
-            <AdminSidebar />
-          </div>
+          <div className="col-md-3">{user.role === 1 ? <AdminSidebar /> : <UserSidebar />}</div>
           <div className="col-md-6 mt-5">
             <form className="shadow-lg p-3 rounded-4">
               {showError()}
@@ -180,10 +179,6 @@ const AddProduct = () => {
                     ))}
                 </select>
               </div>
-              {/* <div className="mb-3">
-                <label htmlFor="owner">Owner</label>
-                <input type="text" className="form-control" id="owner" onChange={handleChange("owner")} value={owner} />
-              </div> */}
 
               <div className="mb-3 text-center">
                 <button className="btn btn-warning " onClick={onSubmit}>
@@ -198,14 +193,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
-
-// recipe_name;
-// image;
-// description;
-// prep_time;
-// cook_time;
-// instructions;
-// category;
-// rating;
-// owner;
+export default AddRecipe;
