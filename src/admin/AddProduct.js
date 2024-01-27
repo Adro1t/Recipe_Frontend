@@ -8,6 +8,7 @@ const AddProduct = () => {
   const [values, setValues] = useState({
     recipe_name: "",
     description: "",
+    ingredients: "",
     prep_time: "",
     cook_time: "",
     instructions: "",
@@ -22,6 +23,7 @@ const AddProduct = () => {
   const {
     recipe_name,
     description,
+    ingredients,
     prep_time,
     cook_time,
     instructions,
@@ -51,7 +53,7 @@ const AddProduct = () => {
   const handleChange = (name) => (e) => {
     const value = name === "image" ? e.target.files[0] : e.target.value;
     formData.set(name, value);
-    setValues({ ...values, [name]: value, owner: `${user._id}` });
+    setValues({ ...values, [name]: value });
   };
 
   const onSubmit = (e) => {
@@ -67,6 +69,7 @@ const AddProduct = () => {
           ...values,
           recipe_name: "",
           description: "",
+          ingredients: "",
           prep_time: "",
           cook_time: "",
           instructions: "",
@@ -128,6 +131,14 @@ const AddProduct = () => {
                   id="description"
                   onChange={handleChange("description")}
                   value={description}></textarea>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="ingredients">Ingredients</label>
+                <textarea
+                  className="form-control"
+                  id="ingredients"
+                  onChange={handleChange("ingredients")}
+                  value={ingredients}></textarea>
               </div>
               <div className="mb-3">
                 <label htmlFor="prep_time">Preparation Time</label>

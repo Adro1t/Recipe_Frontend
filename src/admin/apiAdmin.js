@@ -46,3 +46,8 @@ export const createRecipe = async (token, recipe) => {
     return console.log(err);
   }
 };
+
+//to show recipes
+export const showRecipes = () => {
+  fetch(`${API}/recipe/list`);
+};
