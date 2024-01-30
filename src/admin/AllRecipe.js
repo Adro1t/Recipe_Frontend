@@ -9,7 +9,6 @@ const AllRecipe = () => {
   const [recipes, setRecipes] = useState([]);
   const [users, setUsers] = useState([]);
   const { token } = isAuthenticated();
-  const { _id, name } = users;
 
   const loadRecipes = () => {
     showRecipes().then((data) => {
@@ -35,9 +34,6 @@ const AllRecipe = () => {
     loadRecipes();
     loadUsers();
   }, []);
-
-  console.log("recipes", recipes);
-  console.log("users", users);
 
   return (
     <>

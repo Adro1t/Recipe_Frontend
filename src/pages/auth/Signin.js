@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import khajaSet from "../../images/Khajaset.png";
+import logo from "../../images/Recipix.png";
 
+import background from "../../images/background.png";
 import { authenticate, isAuthenticated, signin } from "./index";
 
 const Signin = () => {
@@ -58,39 +61,51 @@ const Signin = () => {
 
   return (
     <>
-      <div className="p-5">
-        <h1>Signin Page</h1>
-
-        <form>
-          {showError()}
-          {/* {redirectUser()} */}
-          <label htmlFor="email">Email:</label>
-          <br />
-          <input
-            className="form-control"
-            type="text"
-            id="email"
-            name="email"
-            onChange={handleChange("email")}
-            value={email}
-          />
-          <br />
-          <label htmlFor="password">Password:</label>
-          <br />
-          <input
-            className="form-control"
-            type="password"
-            id="password"
-            name="password"
-            onChange={handleChange("password")}
-            value={password}
-          />
-          <br />
-          <button className="btn btn-primary" onClick={clickSubmit}>
-            Login
-          </button>
-          <Link to="/forgetpassword">Forget Password</Link>
-        </form>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-4 p-5">
+            <img src={logo} alt="logo" className="d-inline" width={"100px"} />
+            <span>RECIPIX</span>
+            <p className="text-center">WELCOME</p>
+            <br />
+            <Link to="/signin">Signin</Link>
+            <Link to="/signup">Register</Link>
+            <form>
+              {showError()}
+              {/* {redirectUser()} */}
+              <label htmlFor="email">Email:</label>
+              <br />
+              <input
+                className="form-control"
+                type="text"
+                id="email"
+                name="email"
+                onChange={handleChange("email")}
+                value={email}
+              />
+              <br />
+              <label htmlFor="password">Password:</label>
+              <br />
+              <input
+                className="form-control"
+                type="password"
+                id="password"
+                name="password"
+                onChange={handleChange("password")}
+                value={password}
+              />
+              <br />
+              <button className="btn btn-primary" onClick={clickSubmit}>
+                Login
+              </button>
+              <Link to="/forgetpassword">Forget Password</Link>
+            </form>
+          </div>
+          <div className="col-md-8">
+            <img src={khajaSet} alt="khaja" className="w-50" />
+            <img src={background} alt="..." className="w-50" />
+          </div>
+        </div>
       </div>
     </>
   );

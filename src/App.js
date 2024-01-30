@@ -9,7 +9,6 @@ import RecipeDetails from "./pages/RecipeDetails";
 import Recipes from "./pages/Recipes";
 import AdminRoute from "./pages/auth/AdminRoute";
 import Confirm from "./pages/auth/Confirm";
-import Login from "./pages/auth/Login";
 import PrivateRoute from "./pages/auth/PrivateRoute";
 import Signin from "./pages/auth/Signin";
 import Signup from "./pages/auth/Signup";
@@ -27,7 +26,6 @@ const App = () => {
           <Route path="/details" element={<RecipeDetails />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/forgetpassword" element={<ForgetPassword />} />
           <Route path="/reset/password/:token" element={<ResetPassword />} />
           <Route path="/email/confirmation/:token" element={<Confirm />} />

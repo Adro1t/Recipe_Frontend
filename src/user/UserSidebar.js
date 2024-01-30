@@ -25,12 +25,12 @@ const UserSidebar = () => {
 
           <li>
             <Link to="/user/addrecipe" className="nav-link text-white">
-              Add Product
+              Add Recipe
             </Link>
           </li>
           <li>
             <Link to="#" className="nav-link text-white">
-              Products
+              My Recipes
             </Link>
           </li>
           <li>
