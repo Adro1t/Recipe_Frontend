@@ -1,12 +1,15 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
-import UserDashboard from "../user/UserDashboard";
+import { Navigate, Outlet } from "react-router-dom";
+import Footer from "../../components/Footer";
+import Nav from "../../components/Nav";
 import { isAuthenticated } from "./index";
 
 const PrivateRoute = () =>
   isAuthenticated() && isAuthenticated().user.role === 0 ? (
     <>
-      <UserDashboard />
+      <Nav />
+      <Outlet />
+      <Footer />
     </>
   ) : (
     <Navigate to="/login" />

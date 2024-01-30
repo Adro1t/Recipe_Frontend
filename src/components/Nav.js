@@ -47,7 +47,7 @@ const Nav = () => {
 
         <div className="User">
           {!isAuthenticated() && (
-            <Link to="/login">
+            <Link to="/signin">
               <img src={user} alt="login" />
             </Link>
           )}

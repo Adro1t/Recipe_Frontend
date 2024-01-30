@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import khajaSet from "../../images/Khajaset.png";
+import logo from "../../images/Recipix.png";
+import background from "../../images/background.png";
+
 import { signup } from "./index";
 
 const Signup = () => {
@@ -57,59 +62,72 @@ const Signup = () => {
 
   return (
     <>
-      <div className="p-5">
-        <h1>Signup Page</h1>
-        <form>
-          {showError()}
-          {showSuccess()}
-          <label htmlFor="userName">Username:</label>
-          <br />
-          <input
-            className="form-control"
-            type="text"
-            id="userName"
-            name="userName"
-            onChange={handleChange("name")}
-            value={name}
-          />
-          <br />
-          <label htmlFor="email">Email:</label>
-          <br />
-          <input
-            className="form-control"
-            type="text"
-            id="email"
-            name="email"
-            onChange={handleChange("email")}
-            value={email}
-          />
-          <br />
-          <label htmlFor="password">Password:</label>
-          <br />
-          <input
-            className="form-control"
-            type="password"
-            id="password"
-            name="password"
-            onChange={handleChange("password")}
-            value={password}
-          />
-          <br />
-          <label htmlFor="confirmPassword">Confirm Password:</label>
-          <br />
-          <input
-            className="form-control"
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            onChange={handleChange("confirmPassword")}
-            value={confirmPassword}
-          />
-          <br />
-          <button className="btn btn-primary" onClick={clickSubmit}>
-            Register
-          </button>
-        </form>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-4 p-5">
+            <img src={logo} alt="logo" className="d-inline" width={"100px"} />
+            <span>RECIPIX</span>
+            <p className="text-center">CREATE ACCOUNT</p>
+            <br />
+            <Link to="/signin">Signin</Link>
+            <Link to="/signup">Register</Link>
+            <form>
+              {showError()}
+              {showSuccess()}
+              <label htmlFor="userName">Username:</label>
+              <br />
+              <input
+                className="form-control"
+                type="text"
+                id="userName"
+                name="userName"
+                onChange={handleChange("name")}
+                value={name}
+              />
+              <br />
+              <label htmlFor="email">Email:</label>
+              <br />
+              <input
+                className="form-control"
+                type="text"
+                id="email"
+                name="email"
+                onChange={handleChange("email")}
+                value={email}
+              />
+              <br />
+              <label htmlFor="password">Password:</label>
+              <br />
+              <input
+                className="form-control"
+                type="password"
+                id="password"
+                name="password"
+                onChange={handleChange("password")}
+                value={password}
+              />
+              <br />
+              <label htmlFor="confirmPassword">Confirm Password:</label>
+              <br />
+              <input
+                className="form-control"
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                onChange={handleChange("confirmPassword")}
+                value={confirmPassword}
+              />
+              <br />
+              <button className="btn btn-primary" onClick={clickSubmit}>
+                Register
+              </button>
+            </form>
+          </div>
+          <div className="col-md-8">
+            <img src={khajaSet} alt="khaja" className="w-50" />
+            <img src={background} alt="..." className="w-50" />
+          </div>
+        </div>
       </div>
     </>
   );
