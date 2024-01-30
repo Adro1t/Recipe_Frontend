@@ -7,7 +7,10 @@ const Login = () => {
   return (
     <>
       <Nav />
-      <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
+      <div
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "100vh" }}
+      >
         <Signin />
         <Signup />
       </div>

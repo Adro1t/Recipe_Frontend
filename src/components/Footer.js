@@ -7,10 +7,10 @@ import recipix from "../images/Recipix.png";
 const Footer = () => (
   <footer className="footer">
     <div className="footer-container">
-      <div className="footer-column">
+      <div className="footer-column footer-col-1">
         <div className="logo-footer">
           <Link className="" to="/">
-            <img className="img-logo" src={recipix} alt=""></img>
+            <img className="img-logo-footer" src={recipix} alt=""></img>
             RecipiX
           </Link>
         </div>

@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 li {
@@ -19,7 +19,6 @@ a:hover {
   color: #feb717;
 }
 
-/*HEADER*/
 header {
   position: relative;
   padding: 0 2rem;
